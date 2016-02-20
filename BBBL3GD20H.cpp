@@ -1,5 +1,4 @@
-
-#include "BBBL3GD20H.h"
+#include "include/BBBL3GD20H.h"
 
 /**
  \brief BBBLSM303DLHC : A class that provides control of the accelerometer LSM303DLHC and extends I2C devices on the Beaglebone Black.
@@ -88,7 +87,7 @@ void BBBL3GD20H::SetAverages( int iterations = 50 ) {
 void BBBL3GD20H::SetX( void ) {
     this->g.X = ( int16_t ) ( this->Gyroscope.I2C_GetValue( OUT_X_L ) | ( this->Gyroscope.I2C_GetValue( OUT_X_H ) << 8 ) );
     this->g.X *= 0.00875F;
-    this->g.X = ( this->g.X - 226 );
+    this->g.X = (this->g.X);
 }
 
 /*!
@@ -99,7 +98,7 @@ void BBBL3GD20H::SetX( void ) {
 void BBBL3GD20H::SetY( void ) {
     this->g.Y = ( int16_t ) ( this->Gyroscope.I2C_GetValue( OUT_Y_L ) | ( this->Gyroscope.I2C_GetValue( OUT_Y_H ) << 8 ) );
     this->g.Y *= 0.00875F;
-    this->g.Y = ( this->g.Y + 5 );
+    this->g.Y = (this->g.Y);
 }
 
 /*!
@@ -110,7 +109,7 @@ void BBBL3GD20H::SetY( void ) {
 void BBBL3GD20H::SetZ( void ) {
     this->g.Z = -( int16_t ) ( this->Gyroscope.I2C_GetValue( OUT_Z_L ) | ( this->Gyroscope.I2C_GetValue( OUT_Z_H ) << 8 ) );
     this->g.Z *= 0.00875F;
-    this->g.Z = ( this->g.Z - 44 );
+    this->g.Z = (this->g.Z);
 }
 
 /*!
